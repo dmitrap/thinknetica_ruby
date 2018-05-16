@@ -1,16 +1,17 @@
 puts 'Поочередно введите значения коэфицентов a, b, c квадратного уравнения ax^2+bx+c=0'
-a = gets.chomp.to_f
-b = gets.chomp.to_f
-c = gets.chomp.to_f
-d = b*b-4*a*c
-x1 = ((-1*b)+Math.sqrt(d.to_f))/(2*a)
-x2 = ((-1*b)-Math.sqrt(d.to_f))/(2*a)
-if d >= 0
-  if d == 0
-    puts "Дискриминант D=#{d.to_s}, корень X=#{x1.to_s}"
-  elsif d > 0
-    puts "Дискриминант D=#{d.to_s}, корень X1=#{x1.to_s}, корень X2=#{x2.to_s}"
+a = gets.to_f
+b = gets.to_f
+c = gets.to_f
+d = b ** 2 - 4 * a * c
+if d < 0
+  puts "Дискриминант D=#{d}, что меньше нуля. Корней нет!"
+else d >= 0
+  sqrt_d = Math.sqrt(d)
+  x1 = (-b + sqrt_d) / (2 * a)
+  x2 = (-b - sqrt_d) / (2 * a)
+  if x1 == x2
+    puts "Дискриминант D=#{d}, корень X=#{x1}"
+  else
+    puts "Дискриминант D=#{d}, корень X1=#{x1}, корень X2=#{x2}"
   end
-else
-  puts "Дискриминант D=#{d.to_s}, что меньше нуля. Корней нет!"
 end
