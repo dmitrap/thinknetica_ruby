@@ -10,18 +10,18 @@ puts 'ваш треугольник равнобедренный' if a == b || a
 puts 'ваш треугольник равносторонний' if a == b && a == c
 if a > b
 	if a > c
-    maxside = a ** 2
-    sum = c ** 2 + b ** 2
+    maxside = a**2
+    sum = c**2 + b**2
 	else
     maxside = c**
-    sum = a ** 2 + b ** 2
+    sum = a**2 + b**2
   end
 elsif b > c
-	maxside = b ** 2
-  sum = a ** 2 + c ** 2
+	maxside = b**2
+  sum = a**2 + c**2
 elsif b < c
-	maxside = c ** 2
-  sum = a ** 2 + b ** 2
+	maxside = c**2
+  sum = a**2 + b**2
 end
 if maxside.nil?
   puts 'ваш треугольник не прямоугольный!'
