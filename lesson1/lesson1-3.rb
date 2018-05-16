@@ -9,24 +9,21 @@ c = gets.to_f
 puts 'ваш треугольник равнобедренный' if a == b || a == c || b == c
 puts 'ваш треугольник равносторонний' if a == b && a == c
 if a > b
-	if a > c
-    maxside = a**2
-    sum = c**2 + b**2
-	else
-    maxside = c**
-    sum = a**2 + b**2
-  end
-elsif b > c
-	maxside = b**2
-  sum = a**2 + c**2
-elsif b < c
-	maxside = c**2
-  sum = a**2 + b**2
+	if a**2 == c**2 + b**2
+		puts "ваш треугольник прямоугольный!"
+	elsif c**2 == a**2 + b**2
+		puts "ваш треугольник прямоугольный!"
+	end
 end
-if maxside.nil?
-  puts 'ваш треугольник не прямоугольный!'
-elsif maxside == sum
-  puts 'ваш треугольник прямоугольный!'
+if b > c
+	if b**2 == a**2 + c**2
+	puts "ваш треугольник прямоугольный"
+end
+end
+if b < c
+	if c**2 == a**2 + b**2
+	puts "ваш треугольник прямоугольный"
 else
   puts "ваш треугольник не прямоугольный!"
+end
 end
