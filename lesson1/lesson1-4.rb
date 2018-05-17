@@ -10,6 +10,7 @@ elsif d > 0
   x1 = (-b + sqrt_d) / (2 * a)
   x2 = (-b - sqrt_d) / (2 * a)
   puts "Дискриминант D=#{d}, корень X1=#{x1}, корень X2=#{x2}"
-else x1 == x2
+else
+  x1 = (-b + Math.sqrt(d)) / (2 * a)
   puts "Дискриминант D=#{d}, корень X=#{x1}"
 end
