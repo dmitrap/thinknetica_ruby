@@ -8,11 +8,20 @@ puts 'сторона c?'
 c = gets.to_f
 puts 'ваш треугольник равнобедренный' if a == b || a == c || b == c
 puts 'ваш треугольник равносторонний' if a == b && a == c
-if a**2 == c**2 + b**2
-	puts "ваш треугольник прямоугольный"
-elsif b**2 == a**2 + c**2
-	puts "ваш треугольник прямоугольный"
-elsif c**2 == a**2 + b**2
+if a > b
+	max = a
+	leg1 = b
+else
+	max = b
+	leg1 = a
+end
+if max > c
+	leg2 = c
+else
+	leg2 = max
+	max = c
+end
+if max**2 == leg1**2 + leg2**2
 	puts "ваш треугольник прямоугольный"
 else
 	puts "ваш треугольник не прямоугольный!"
