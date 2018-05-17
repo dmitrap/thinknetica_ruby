@@ -7,6 +7,6 @@ height = gets.to_f
 ideal_weight = height - 110
 if ideal_weight > 0
   puts "#{name}, ваш идеальный вес #{ideal_weight} кг!"
-elsif ideal_weight =< 0
+else
   puts "#{name}, ваш вес уже идеальный!"
 end
