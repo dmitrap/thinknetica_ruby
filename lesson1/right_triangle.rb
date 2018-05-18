@@ -20,14 +20,10 @@ else
   leg2 = max
   max = c
 end
-if max**2 == leg1**2 + leg2**2
-  rectangle = true
-else
-  rectangle = false
-end
-if rectangle == true && (a == b || a == c || b == c)
+rectangle = (max**2 == leg1**2 + leg2**2) ? true : false
+if rectangle && (a == b || a == c || b == c)
   puts "ваш треугольник прямоугольный и равнобедренный"
-elsif rectangle == true
+elsif rectangle
   puts "ваш треугольник прямоугольный"
 else
   puts "ваш треугольник не прямоугольный!"
