@@ -6,7 +6,10 @@ puts 'сторона b?'
 b = gets.to_f
 puts 'сторона c?'
 c = gets.to_f
-puts 'ваш треугольник равносторонний' if a == b && a == c
+if a == b && a == c
+  puts 'ваш треугольник равносторонний'
+  exit
+end
 if a > b
   max = a
   leg1 = b
@@ -20,8 +23,8 @@ else
   leg2 = max
   max = c
 end
-rectangle = (max**2 == leg1**2 + leg2**2) ? true : false
-if rectangle && (a == b || a == c || b == c)
+rectangle = max**2 == leg1**2 + leg2**2
+if rectangle && (leg1 == leg2)
   puts "ваш треугольник прямоугольный и равнобедренный"
 elsif rectangle
   puts "ваш треугольник прямоугольный"
