@@ -1,8 +1,8 @@
 vowels = ['a','e','i','o','u']
-hash = Hash.new
+vowels_with_index = {}
 ('a'..'z').each_with_index do |letter, i|
   if vowels.include?(letter)
-    hash[letter] = i + 1
+    vowels_with_index[letter] = i + 1
   end
 end
-puts hash
+puts vowels_with_index

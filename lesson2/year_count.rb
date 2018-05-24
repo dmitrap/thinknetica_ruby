@@ -1,26 +1,16 @@
 puts 'пожалуйста введите поочередно три числа, обозначающих сегодняшнюю дату (в формате: дд.мм.гггг)'
-day = gets.chomp.to_i
-month = gets.chomp.to_i
-year = gets.chomp.to_i
-if year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)
-  leap = 29
+today = gets.to_i
+month = gets.to_i
+year = gets.to_i
+if year % 400 == 0 || year % 4 == 0 && year % 100 != 0
+  feb = 29
 else
-  leap = 28
+  feb = 28
 end
-months = { 1 => 31,
-  2 => leap,
-  3 => 31,
-  4 => 30,
-  5 => 31,
-  6 => 30,
-  7 => 31,
-  8 => 31,
-  9 => 30,
-  10 => 31,
-  11 => 30,
-  12 => 31 }
-months.delete_if { |i| i >= month }
-months.each do |m, d|
-  day = day + d
+months = [0, 31, feb, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+day = 0
+months[0...month].each do |sum|
+  day += sum
 end
-puts "сегодня #{day} день года!"
+today = today + day
+puts "сегодня #{today} день года!"
