@@ -5,8 +5,6 @@ year = gets.to_i
 months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 months[1] = 29 if year % 400 == 0 || year % 4 == 0 && year % 100 != 0
 day = 0
-(0..month - 2).each do |sum|
-  day += months[sum]
-end
+(0..month - 2).each {|sum| day += months[sum]} 
 today = today + day
 puts "сегодня #{today} день года!"
