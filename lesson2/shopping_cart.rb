@@ -1,5 +1,4 @@
 cart = {}
-total = 0
 loop do
   puts 'Пожалуйста введите название, цену и количество товаров, введите "стоп" чтобы закончить.'
   print 'товар: '
@@ -12,6 +11,7 @@ loop do
   cart[title] = { price: price, quantity: quantity }
 end
 puts cart
+total = 0
 cart.each do |name, details|
   sum = details[:price] * details[:quantity]
   puts "Наименование товара: #{name}.  Количество товара: #{details[:quantity]}. Итого за товар: #{sum}. "
