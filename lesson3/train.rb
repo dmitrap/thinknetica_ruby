@@ -35,26 +35,28 @@ class Train
   end
 
   def goto_next_station
-    if station
+    return unless station
       @station.depart(self)
       @station = next_station
       @station.arrive(self)
-    end
   end
 
   def goto_prev_station
-    if station
+    return unless station
       @station.depart(self)
       @station = prev_station
       @station.arrive(self)
-    end
+  end
+
+  def get_current_station
+    @route.stations.find_index(@station)
   end
 
   def prev_station
-    @route.stations[@route.stations.find_index(@station) - 1] if route == true
+    @route.stations[get_current_station - 1] if @route
   end
 
   def next_station
-    @route.stations[@route.stations.find_index(@station) + 1] if route == true
+    @route.stations[get_current_station + 1] if @route
   end
 end

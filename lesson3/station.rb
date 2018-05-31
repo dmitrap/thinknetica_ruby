@@ -16,7 +16,7 @@ class Station
 
   def trains_by_type
     trains_type = Hash.new(0)
-    trains.each { |train| treains_type[train.type] += 1 }
+    trains.each { |train| trains_type[train.type] += 1 }
     trains_type
   end
 end
