@@ -14,9 +14,7 @@ class Station
     @trains.delete(train)
   end
 
-  def trains_by_type
-    trains_type = Hash.new(0)
-    trains.each { |train| trains_type[train.type] += 1 }
-    trains_type
+  def trains_by_type(type)
+     trains.each {|train| puts train.number if train.type == type}
   end
 end
